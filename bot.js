@@ -15,10 +15,4 @@ client.on("message", async (message) => {
   }
 });
 
-client.on("message", async (message) => {
-  if (message.content === "Bruva") {
-    message.reply("Pink Papi");
-  }
-});
-
 client.login(process.env.BOT_TOKEN);
