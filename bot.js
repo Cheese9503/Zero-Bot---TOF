@@ -12,6 +12,8 @@ client.on("ready", () => {
 client.on("message", async (message) => {
   if (message.content === "ping") {
     message.reply("pong");
+  } else if (message.content === "Bruva") {
+    message.reply("Pink Boi");
   }
 });
 
