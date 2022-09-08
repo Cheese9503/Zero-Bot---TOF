@@ -7,4 +7,10 @@ client.on("ready", () => {
   console.log("Our bot is ready to go");
 });
 
+client.on("message", (msg) => {
+  if (msg.content === "!ping") {
+    msg.channel.send("Pong");
+  }
+});
+
 client.login(process.env.BOT_TOKEN);
