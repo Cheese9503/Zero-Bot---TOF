@@ -7,9 +7,17 @@ client.on("ready", () => {
   console.log("Our bot is ready to go");
 });
 
-client.on("message", (msg) => {
-  if (msg.content === "!ping") {
-    msg.channel.send("Pong");
+client.on("interactionCreate", async (interaction) => {
+  if (!interaction.isChatInputCommand()) return;
+
+  const { commandName } = interaction;
+
+  if (commandName === "ping") {
+    await interaction.reply("Pong!");
+  } else if (commandName === "server") {
+    await interaction.reply("Server info.");
+  } else if (commandName === "user") {
+    await interaction.reply("User info.");
   }
 });
 
